@@ -67,3 +67,5 @@ botonDeFiltro.onclick = function() {
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
 } ; // ;  
+
+//Terminado
