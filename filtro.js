@@ -9,11 +9,8 @@ const productos = [
 ]
 
 const li = document.getElementById ("lista-de-productos") //Se cambio porque solo buscaba elementos por nombre y se necesitaba por elemento con ID 
-const $i = document.querySelector('.input'); //BUSCAR INPUT SINO CORREGIR const $i = document.querySelector('input[type="text"]');
+const $i = document.querySelector("color-tipo"); //se busco input y se corrigio
 
-//$i.addEventListener('input', (event) => {
- // console.log(event.target.value); //Se agrega un addevent listener escucarñp
-//}); CORREGIR PORQUE ME MUEVE LO DEMAS
 
 
 
