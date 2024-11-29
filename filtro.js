@@ -8,27 +8,35 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+const li = document.getElementById ("lista-de-productos") //Se cambio porque solo buscaba elementos por nombre y se necesitaba por elemento con ID 
+const $i = document.querySelector('.input'); //BUSCAR INPUT SINO CORREGIR const $i = document.querySelector('input[type="text"]');
 
+//$i.addEventListener('input', (event) => {
+ // console.log(event.target.value); //Se agrega un addevent listener escucarñp
+//}); CORREGIR PORQUE ME MUEVE LO DEMAS
+
+
+
+const displayProductos = (productos) => { //Se agrega para definir a la funcion antes de ser llamada
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
   d.classList.add("producto")
 
-  var ti = document.createElement("p")
-  ti.classList.add("titulo")
-  ti.textContent = productos[i].nombre
+  var ti = document.createElement("p"); //falta punto y coma
+  ti.classList.add("titulo") //punto y coma
+  ti.textContent = productos[i].nombre; //faltaba ;
   
   var imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
-  d.appendChild(ti)
-  d.appendChild(imagen)
+  d.appendChild(ti);// ;
+  d.appendChild(imagen); //
 
-  li.appendChild(d)
+  li.appendChild(d); //;
 }
+}; //parentesis para llamar a la funcion displayproducts
 
-displayProductos(productos)
+displayProductos(productos)//Llama a la funcion pero no ha sido antes definida
 const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
@@ -41,23 +49,23 @@ botonDeFiltro.onclick = function() {
   const productosFiltrados = filtrado(productos, texto );
 
   for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div")
-    d.classList.add("producto")
+    var d = document.createElement("div"); // ;
+    d.classList.add("producto"); // falta ;
   
-    var ti = document.createElement("p")
-    ti.classList.add("titulo")
-    ti.textContent = productosFiltrados[i].nombre
+    var ti = document.createElement("p"); //;
+    ti.classList.add("titulo"); //:
+    ti.textContent = productosFiltrados[i].nombre; //;
     
     var imagen = document.createElement("img");
     imagen.setAttribute('src', productosFiltrados[i].img);
   
-    d.appendChild(ti)
-    d.appendChild(imagen)
-  
-    li.appendChild(d)
+    d.appendChild(ti); //;
+    d.appendChild(imagen); //;
+   
+    li.appendChild(d); //;
   }
 }
 
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
-}  
+} ; // ;  
