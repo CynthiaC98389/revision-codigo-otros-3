@@ -9,7 +9,7 @@ const productos = [
 ]
 
 const li = document.getElementById ("lista-de-productos") //Se cambio porque solo buscaba elementos por nombre y se necesitaba por elemento con ID 
-const $i = document.querySelector("color-tipo"); //se busco input y se corrigio
+const $i = document.querySelector("#color-tipo"); //se busco input y se corrigio poniendo ID #
 
 
 
@@ -37,6 +37,7 @@ displayProductos(productos)//Llama a la funcion pero no ha sido antes definida
 const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
+  console.log("Botón de filtro funciona"); // Ver si funciona el boton
   while (li.firstChild) {
     li.removeChild(li.firstChild);
   }
@@ -47,7 +48,7 @@ botonDeFiltro.onclick = function() {
 
   for (let i = 0; i < productosFiltrados.length; i++) {
     var d = document.createElement("div"); // ;
-    d.classList.add("producto"); // falta ;
+    d.classList.add("producto"); //  ;
   
     var ti = document.createElement("p"); //;
     ti.classList.add("titulo"); //:
